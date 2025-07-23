@@ -13,7 +13,7 @@ feature_names = [
     "Unknown Feature 1", "Unknown Feature 2", "Unknown Feature 3", "Unknown Feature 4"
 ]
 
-# Dropdown options for categorical features
+#  categorical features
 dropdown_features = {
     "Checking Account Status": {1: "A11", 2: "A12", 3: "A13", 4: "A14"},
     "Credit History": {0: "No credit", 1: "Paid in full", 2: "All paid", 3: "Delay", 4: "Critical"},
@@ -66,30 +66,30 @@ if st.button("Predict Credit Risk"):
     st.subheader("📊 Top 10 Important Features")
 
     importances = model.feature_importances_
-feature_importance_df = pd.DataFrame({
-    'Feature': feature_names,
-    'Importance': importances
-}).sort_values(by="Importance", ascending=False).head(10)
+    feature_importance_df = pd.DataFrame({
+        'Feature': feature_names,
+        'Importance': importances
+    }).sort_values(by="Importance", ascending=False).head(10)
 
-# Use Seaborn style
-sns.set_style("whitegrid")
+    
+    sns.set_style("whitegrid")
 
-# Plot
-fig, ax = plt.subplots(figsize=(10, 6))
-sns.barplot(
-    x="Importance",
-    y="Feature",
-    data=feature_importance_df,
-    palette="crest"
-)
+    # Plot
+    fig, ax = plt.subplots(figsize=(10, 6))
+    sns.barplot(
+        x="Importance",
+        y="Feature",
+        data=feature_importance_df,
+        palette="crest"
+    )
 
-# Styling
-ax.set_title("🔍 Top 10 Most Important Features", fontsize=16, weight='bold', pad=15)
-ax.set_xlabel("Importance", fontsize=12)
-ax.set_ylabel("Feature", fontsize=12)
-ax.tick_params(axis='both', labelsize=10)
-sns.despine(left=True, bottom=True)
+    # Styling
+    ax.set_title("🔍 Top 10 Most Important Features", fontsize=16, weight='bold', pad=15)
+    ax.set_xlabel("Importance", fontsize=12)
+    ax.set_ylabel("Feature", fontsize=12)
+    ax.tick_params(axis='both', labelsize=10)
+    sns.despine(left=True, bottom=True)
 
-st.pyplot(fig)
+    st.pyplot(fig)
 
 st.markdown("> ⚠️ *Note: This app is built for learning purposes using the German Credit dataset (numeric format).*")

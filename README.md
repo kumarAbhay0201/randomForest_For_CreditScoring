@@ -1,5 +1,7 @@
 # 💳 Credit Risk Predictor
 
+#this app is live on "https://creditscoringtoolbyabhaykumar.streamlit.app/"
+
 Welcome to the **Credit Risk Predictor** — a simple, interactive web app built using **Streamlit** that helps estimate whether a person is a **Good** or **Bad** credit risk based on various financial attributes.
 
 > ⚠️ *Disclaimer: This app is created for educational purposes only using a well-known public dataset and is not meant for real-world credit assessment.*

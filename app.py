@@ -1,3 +1,5 @@
+#this app is live on "https://creditscoringtoolbyabhaykumar.streamlit.app/"
+
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
